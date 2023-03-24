@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+</head>
+<body>
+<form th:action="@{/roll-dice}" method="post">
+    <div>
+        <label for="guess">Guess your next dice roll: </label>
+        <input type="number" id="guess" name="guess">
+        <button>Submit!</button>
+    </div>
+</form>
+</body>
+</html>
