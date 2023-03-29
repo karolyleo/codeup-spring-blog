@@ -3,7 +3,7 @@ package com.codeup.codeupspringblog.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="Posts")
+@Table(name="posts")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -11,8 +11,11 @@ public class Post {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String body;
     @Column(nullable = false)
-
     private String title;
+
+    @ManyToOne
+    @JoinColumn(name= "user_id")
+    private User user;
 
     public Post(){};
 
@@ -35,5 +38,13 @@ public class Post {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
